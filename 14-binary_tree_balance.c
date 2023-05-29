@@ -5,7 +5,7 @@
  *
  * @tree: pointer to node to be checked
  *
- * Return: 2 if its a balanced node ; -1 if it has one child ; 0 otherwise
+ * Return: 2 if its a balanced node or -1 if it has one child or 0 otherwise
  */
 
 int binary_tree_balance(const binary_tree_t *tree)
