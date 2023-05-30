@@ -33,6 +33,7 @@ typedef struct binary_tree_s binary_tree_t;
 /*================== FUNCTION DEFINITIONS ===================*/
 /*===========================================================*/
 
+int count_nodes(binary_tree_t *tree);
 void binary_tree_delete(binary_tree_t *tree);
 void binary_tree_print(const binary_tree_t *);
 int binary_tree_is_leaf(const binary_tree_t *node);
