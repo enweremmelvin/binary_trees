@@ -1,6 +1,14 @@
 #include "binary_trees.h"
 #include <stdio.h>
 
+/**
+ * get_height - get the height of a binary tree
+ *
+ * @tree: tree whose height is to be gotten
+ *
+ * Return: height of tree
+ */
+
 size_t get_height(const binary_tree_t *tree)
 {
 	static size_t height = 1;
