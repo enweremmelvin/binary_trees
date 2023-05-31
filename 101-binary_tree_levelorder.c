@@ -26,11 +26,13 @@ binary_tree_t *first_node(queue_n *queue)
 
 void add_node(queue_n *queue, binary_tree_t *node)
 {
-	queue_n *temp = queue;
+	queue_n *temp;
 	queue_n *new_queue_node;
 
 	if ((queue == NULL) || (node == NULL))
 		return;
+
+	temp = queue;
 
 	new_queue_node = malloc(sizeof(queue_n));
 	new_queue_node->node = node;
@@ -52,10 +54,12 @@ void add_node(queue_n *queue, binary_tree_t *node)
 
 queue_n *pop_node(queue_n *queue)
 {
-	queue_n *temp = queue;
+	queue_n *temp;
 
 	if (queue == NULL)
 		return (NULL);
+
+	temp = queue;
 
 	if (temp->node != NULL)
 	{
@@ -87,7 +91,7 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 
 	if (tree->left != NULL)
 		node = tree->left->parent;
-	if (tree->right != NULL)
+	else if (tree->right != NULL)
 		node = tree->right->parent;
 
 	queue = malloc(sizeof(queue_n));
