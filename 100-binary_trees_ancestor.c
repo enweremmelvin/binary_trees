@@ -128,11 +128,6 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	if ((first == NULL) || (second == NULL))
 		return (NULL);
 
-	if (first == second->parent)
-		return (second->parent);
-	if (second == first->parent)
-		return (first->parent);
-
 	for (i = 0; i < 100; i++)
 	{
 		ret_val = get_ancestor(first, second, &ancestor, i);
