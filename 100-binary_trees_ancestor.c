@@ -128,7 +128,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	if ((first == NULL) || (second == NULL))
 		return (NULL);
 
-	for (i = 0; i < 100; i++)
+	for (i = 0; i < 10000; i++)
 	{
 		ret_val = get_ancestor(first, second, &ancestor, i);
 
