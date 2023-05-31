@@ -20,7 +20,7 @@ binary_tree_t *look_up_second(binary_tree_t *root, binary_tree_t *second)
 	temp_second = second;
 	look_up_second(root, second->parent);
 
-	while (temp_second->parent != NULL)
+	while (temp_second != NULL)
 	{
 		if ((root->left == temp_second->parent) ||
 		    (root->right == temp_second->parent))
