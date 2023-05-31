@@ -12,14 +12,22 @@
 
 binary_tree_t *look_up_second(binary_tree_t *root, binary_tree_t *second)
 {
+	binary_tree_t *temp_second;
+
 	if (second == NULL)
 		return (NULL);
 
+	temp_second = second;
 	look_up_second(root, second->parent);
 
-	if ((root->left == second->parent) ||
-	    (root->right == second->parent))
-		return (second->parent);
+	while (temp_second->parent != NULL)
+	{
+		if ((root->left == temp_second->parent) ||
+		    (root->right == temp_second->parent))
+			return (temp_second->parent);
+
+		temp_second = temp_second->parent;
+	}
 
 	return (NULL);
 }
