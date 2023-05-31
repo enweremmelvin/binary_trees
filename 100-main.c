@@ -52,7 +52,7 @@ int main(void)
 	launch_test(root, root);
 
 	printf("NEW_NODE: \n");
-	root2 = binary_tree_node(NULL, 98);
+	root2 = binary_tree_node(NULL, 980);
 
 	printf("root value: %d\n", root2->n);
 	launch_test(root, root2);

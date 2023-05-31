@@ -5,7 +5,7 @@
 #include <stddef.h>
 
 /*===========================================================*/
-/*========= DATA STRUCTURE TO BE USED (BINARY TREE) =========*/
+/*=============== BINARY TREE DATA STRUCTURE  ===============*/
 /*===========================================================*/
 
 /**
@@ -24,6 +24,18 @@ struct binary_tree_s
 	struct binary_tree_s *right;
 };
 
+
+/*===========================================================*/
+/*================== QUEUE DATA STRUCTURE  ==================*/
+/*===========================================================*/
+
+struct queue_
+{
+	struct queue_ *next;
+	struct binary_tree_s *node;
+};
+
+
 /*===========================================================*/
 /*====== DATA STRUCTURES WITH BASE OF <binary_tree_s> =======*/
 /*===========================================================*/
@@ -33,6 +45,11 @@ typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 typedef struct binary_tree_s binary_tree_t;
 
+/*===========================================================*/
+/*========== DATA STRUCTURES WITH BASE OF <queue_> ==========*/
+/*===========================================================*/
+
+typedef struct queue_ queue_n;
 
 /*===========================================================*/
 /*================== FUNCTION DEFINITIONS ===================*/
@@ -60,6 +77,7 @@ void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int));
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int));
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 
 
 #endif /* _BINARY_TREES_H_ */
