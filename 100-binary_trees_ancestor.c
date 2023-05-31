@@ -68,8 +68,8 @@ binary_tree_t *get_second_ancestor(binary_tree_t *root, binary_tree_t *second)
  */
 
 int get_ancestor(const binary_tree_t *first,
-			    const binary_tree_t *second,
-			    binary_tree_t **ancestor, int n)
+		 const binary_tree_t *second,
+		 binary_tree_t **ancestor, int n)
 {
 	int i;
 	binary_tree_t *temp, *sec;
@@ -81,6 +81,7 @@ int get_ancestor(const binary_tree_t *first,
 	sec = second->parent;
 	temp = first->parent;
 
+	/*redundant assignment to bypass const assignment restrictions*/
 	sec->left == second ? sec = sec->left : 1 * 0;
 	sec->right == second ? sec = sec->right : 1 * 0;
 	temp->left == first ? temp = temp->left : 1 * 0;
