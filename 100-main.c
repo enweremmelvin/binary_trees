@@ -27,7 +27,7 @@ void launch_test(binary_tree_t *n1, binary_tree_t *n2)
  */
 int main(void)
 {
-	binary_tree_t *root;
+	binary_tree_t *root, *root2;
 
 	root = binary_tree_node(NULL, 98);
 	root->left = binary_tree_node(root, 12);
@@ -50,5 +50,11 @@ int main(void)
 	launch_test(root->right->right, root->right->right);
 	launch_test(root, root->right->right);
 	launch_test(root, root);
+
+	printf("NEW_NODE: \n");
+	root2 = binary_tree_node(NULL, 98);
+
+	printf("root value: %d\n", root2->n);
+	launch_test(root, root2);
 	return (0);
 }
