@@ -125,7 +125,8 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	int i, ret_val;
 	binary_tree_t *ancestor = NULL;
 
-	if ((first == NULL) || (second == NULL))
+	if ((first == NULL) || (second == NULL) ||
+	    (first->parent == NULL) || (second->parent == NULL))
 		return (NULL);
 
 	for (i = 0; i < 100; i++)
