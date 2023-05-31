@@ -43,7 +43,7 @@ binary_tree_t *look_up_second(binary_tree_t *root, binary_tree_t *second)
 
 binary_tree_t *get_second_ancestor(binary_tree_t *root, binary_tree_t *second)
 {
-	if ((root->left == NULL) && (root->right == NULL))
+	if ((root == NULL) || ((root->left == NULL) && (root->right == NULL)))
 		return (NULL);
 
 	if ((root->left == second) || (root->right == second))
@@ -87,7 +87,7 @@ int get_ancestor(const binary_tree_t *first,
 	temp->left == first ? temp = temp->left : 1 * 0;
 	temp->right == first ? temp = temp->right : 1 * 0;
 
-	for (i = 0; ((i < n) && (temp != NULL)); i++)
+	for (i = 0; ((i < n) && (temp->parent != NULL)); i++)
 		temp = temp->parent;
 
 	if (temp != NULL)
@@ -129,6 +129,14 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	if ((first == NULL) || (second == NULL) ||
 	    (first->parent == NULL) || (second->parent == NULL))
 		return (NULL);
+
+	if (first == second)
+	{
+		if (first->parent->left == first)
+			return (first->parent->left);
+		else
+			return (first->parent->right);
+	}
 
 	for (i = 0; i < 100; i++)
 	{
