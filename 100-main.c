@@ -49,5 +49,6 @@ int main(void)
 	printf("EDGE CASES: \n");
 	launch_test(root->right->right, root->right->right);
 	launch_test(root, root->right->right);
+	launch_test(root, root);
 	return (0);
 }
