@@ -126,9 +126,13 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	int i, ret_val;
 	binary_tree_t *ancestor = NULL;
 
-	if ((first == NULL) || (second == NULL) ||
-	    (first->parent == NULL) || (second->parent == NULL))
+	if ((first == NULL) || (second == NULL))
 		return (NULL);
+
+	if (first->parent == NULL)
+		return (first->left->parent);
+	if (second->parent == NULL)
+		return (second->left->parent);
 
 	if (first == second)
 	{
